@@ -1,4 +1,8 @@
 #
+# TODO:
+#   - fix ada build errors
+#   - provide as full gcc 3.x as possible without conflicting with gcc 4.x
+#
 # Conditional build:
 %bcond_without	cxx
 %bcond_with	fortran
