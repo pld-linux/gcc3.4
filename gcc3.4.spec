@@ -2,6 +2,8 @@
 # TODO:
 #   - fix ada build errors
 #   - provide as full gcc 3.x as possible without conflicting with gcc 4.x
+#   - should be named gcc3.4 or so, gcc3 is too ambiguous
+#     (there were 4 different ABIs and very different compatibility issues)
 #
 # Conditional build:
 %bcond_without	cxx
