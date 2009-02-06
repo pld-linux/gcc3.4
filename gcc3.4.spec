@@ -21,7 +21,7 @@ Summary:	GNU Compiler Collection: the C compiler and shared files
 Summary(es.UTF-8):	Colección de compiladores GNU: el compilador C y ficheros compartidos
 Summary(pl.UTF-8):	Kolekcja kompilatorów GNU: kompilator C i pliki współdzielone
 Summary(pt_BR.UTF-8):	Coleção dos compiladores GNU: o compilador C e arquivos compartilhados
-Name:		gcc3
+Name:		gcc3.4
 Version:	3.4.6
 Release:	1
 License:	GPL
@@ -676,7 +676,7 @@ TEXCONFIG=false \
 	--libexecdir=%{_libdir} \
 	--infodir=%{_infodir} \
 	--mandir=%{_mandir} \
-	--program-suffix="3" \
+	--program-suffix="3.4" \
 	--enable-version-specific-runtime-libs \
 	--enable-shared \
 	--enable-threads=posix \
@@ -747,12 +747,12 @@ ln -f $RPM_BUILD_ROOT%{_bindir}/sparc64-pld-linux-gcc \
 	$RPM_BUILD_ROOT%{_bindir}/sparc-pld-linux-gcc
 %endif
 
-ln -sf gcc3 $RPM_BUILD_ROOT%{_bindir}/cc3
-echo ".so gcc3.1" > $RPM_BUILD_ROOT%{_mandir}/man1/cc3.1
+ln -sf gcc3.4 $RPM_BUILD_ROOT%{_bindir}/cc3.4
+echo ".so gcc3.4.1" > $RPM_BUILD_ROOT%{_mandir}/man1/cc3.4.1
 
 %if %{with fortran}
-ln -sf g773 $RPM_BUILD_ROOT%{_bindir}/f773
-echo ".so g773.1" > $RPM_BUILD_ROOT%{_mandir}/man1/f773.1
+ln -sf g773.4 $RPM_BUILD_ROOT%{_bindir}/f773.4
+echo ".so g773.4" > $RPM_BUILD_ROOT%{_mandir}/man1/f773.4
 %endif
 
 %if %{with ada}
@@ -760,11 +760,11 @@ echo ".so g773.1" > $RPM_BUILD_ROOT%{_mandir}/man1/f773.1
 mv -f $RPM_BUILD_ROOT%{_libdir}/gcc/*/*/adalib/*.so.1 \
 	$RPM_BUILD_ROOT%{_libdir}
 # check if symlink to be made is valid
-test -f $RPM_BUILD_ROOT%{_libdir}/libgnat3.so.1
-ln -sf libgnat3.so.1 $RPM_BUILD_ROOT%{_libdir}/libgnat3.so
-ln -sf libgnarl3.so.1 $RPM_BUILD_ROOT%{_libdir}/libgnarl3.so
-ln -sf libgnat3.so $RPM_BUILD_ROOT%{_libdir}/libgnat3.so
-ln -sf libgnarl3.so $RPM_BUILD_ROOT%{_libdir}/libgnarl3.so
+test -f $RPM_BUILD_ROOT%{_libdir}/libgnat3.4.so.1
+ln -sf libgnat3.4.so.1 $RPM_BUILD_ROOT%{_libdir}/libgnat3.4.so
+ln -sf libgnarl3.4.so.1 $RPM_BUILD_ROOT%{_libdir}/libgnarl3.4.so
+ln -sf libgnat3.4.so $RPM_BUILD_ROOT%{_libdir}/libgnat3.4.so
+ln -sf libgnarl3.4.so $RPM_BUILD_ROOT%{_libdir}/libgnarl3.4.so
 %endif
 
 cd ..
@@ -853,16 +853,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_aclocaldir}/gcc_visibility.m4
 
 %attr(755,root,root) %{_bindir}/*-gcc*
-%attr(755,root,root) %{_bindir}/gcc3
-%attr(755,root,root) %{_bindir}/gccbug3
-%attr(755,root,root) %{_bindir}/gcov3
-%attr(755,root,root) %{_bindir}/cc3
-%attr(755,root,root) %{_bindir}/cpp3
+%attr(755,root,root) %{_bindir}/gcc3.4
+%attr(755,root,root) %{_bindir}/gccbug3.4
+%attr(755,root,root) %{_bindir}/gcov3.4
+%attr(755,root,root) %{_bindir}/cc3.4
+%attr(755,root,root) %{_bindir}/cpp3.4
 
-%{_mandir}/man1/cc3.1*
-%{_mandir}/man1/cpp3.1*
-%{_mandir}/man1/gcc3.1*
-%{_mandir}/man1/gcov3.1*
+%{_mandir}/man1/cc3.4.1*
+%{_mandir}/man1/cpp3.4.1*
+%{_mandir}/man1/gcc3.4.1*
+%{_mandir}/man1/gcov3.4.1*
 
 %attr(755,root,root) %{_slibdir}/lib*.so
 %ifarch ia64
@@ -903,10 +903,10 @@ rm -rf $RPM_BUILD_ROOT
 %files c++
 %defattr(644,root,root,755)
 %doc gcc/cp/{ChangeLog,NEWS}
-%attr(755,root,root) %{_bindir}/g++3
-%attr(755,root,root) %{_bindir}/*-g++3
-%attr(755,root,root) %{_bindir}/c++3
-%attr(755,root,root) %{_bindir}/*-c++3
+%attr(755,root,root) %{_bindir}/g++3.4
+%attr(755,root,root) %{_bindir}/*-g++3.4
+%attr(755,root,root) %{_bindir}/c++3.4
+%attr(755,root,root) %{_bindir}/*-c++3.4
 %attr(755,root,root) %{_libdir}/gcc/*/*/cc1plus
 %{_libdir}/gcc/*/*/libsupc++.la
 %{_libdir}/gcc/*/*/libsupc++.a
@@ -918,11 +918,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir32}/gcc/*/*/libsupc++.la
 %{_libdir32}/gcc/*/*/libsupc++.a
 %endif
-%{_mandir}/man1/g++3.1*
+%{_mandir}/man1/g++3.4.1*
 
 %files libstdc++
 %defattr(644,root,root,755)
-%doc libstdc++-v3/{ChangeLog,README}
+%doc libstdc++-v3.4/{ChangeLog,README}
 %attr(755,root,root) %{_libdir}/gcc/*/*/libstdc++.so.*.*.*
 %ifarch ppc
 %attr(755,root,root) %{_libdir}/nof/gcc/*/*/libstdc++.so.*.*.*
@@ -933,7 +933,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libstdc++-devel
 %defattr(644,root,root,755)
-%doc libstdc++-v3/docs/html
+%doc libstdc++-v3.4/docs/html
 %{_libdir}/gcc/*/*/include/c++
 %attr(755,root,root) %{_libdir}/gcc/*/*/libstdc++.so
 %{_libdir}/gcc/*/*/libstdc++.la
