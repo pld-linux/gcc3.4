@@ -88,6 +88,7 @@ Requires:	gcc-dirs >= 1.0-3
 Provides:	cpp = %{epoch}:%{version}-%{release}
 %{?with_ada:Provides:	gcc(ada)}
 %{?with_ssp:Provides:	gcc(ssp)}
+Obsoletes:	gcc3
 Conflicts:	glibc-devel < 2.2.5-20
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -136,6 +137,7 @@ Summary(es.UTF-8):	Biblioteca compartida de gcc
 Summary(pl.UTF-8):	Biblioteka gcc
 Summary(pt_BR.UTF-8):	Biblioteca runtime para o GCC
 Group:		Libraries
+Obsoletes:	gcc3-libgcc
 
 %description libgcc
 Shared gcc library.
@@ -156,6 +158,7 @@ Summary(pl.UTF-8):	Obsługa C++ dla gcc
 Summary(pt_BR.UTF-8):	Suporte C++ para o gcc
 Group:		Development/Languages
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Obsoletes:	gcc3-c++
 
 %description c++
 This package adds C++ support to the GNU Compiler Collection. It
@@ -433,6 +436,7 @@ Summary(es.UTF-8):	Biblioteca C++ de GNU
 Summary(pl.UTF-8):	Biblioteki GNU C++
 Summary(pt_BR.UTF-8):	Biblioteca C++ GNU
 Group:		Libraries
+Obsoletes:	gcc3-libstdc++
 
 %description libstdc++
 This is the GNU implementation of the standard C++ libraries, along
@@ -479,6 +483,7 @@ Group:		Development/Libraries
 Requires:	%{name}-c++ = %{epoch}:%{version}-%{release}
 Requires:	%{name}-libstdc++ = %{epoch}:%{version}-%{release}
 Requires:	glibc-devel
+Obsoletes:	gcc3-libstdc++-devel
 
 %description libstdc++-devel
 This is the GNU implementation of the standard C++ libraries. This
@@ -505,6 +510,7 @@ Summary(es.UTF-8):	Biblioteca estándar estática de C++
 Summary(pl.UTF-8):	Statyczna biblioteka standardowa C++
 Group:		Development/Libraries
 Requires:	%{name}-libstdc++-devel = %{epoch}:%{version}-%{release}
+Obsoletes:	gcc3-libstdc++-static
 
 %description libstdc++-static
 Static C++ standard library.
