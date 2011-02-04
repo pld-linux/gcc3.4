@@ -325,7 +325,7 @@ Requires:	%{name}-libg2c = %{epoch}:%{version}-%{release}
 %description libg2c-static
 Static Fortran 77 Libraries.
 
-%description libg2c -l es.UTF-8
+%description libg2c-static -l es.UTF-8
 Bibliotecas estáticas de Fortran 77.
 
 %description libg2c-static -l pl.UTF-8
