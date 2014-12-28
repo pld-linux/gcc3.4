@@ -78,7 +78,7 @@ BuildRequires:	flex
 BuildRequires:	gcc(ada)
 BuildRequires:	gcc-ada
 %endif
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glibc-devel >= 2.2.5-20
 BuildRequires:	perl-devel
 BuildRequires:	texinfo >= 4.1
