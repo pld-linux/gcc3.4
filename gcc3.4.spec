@@ -629,21 +629,21 @@ Adzie.
 %prep
 %setup -q -n gcc-%{version}
 
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+%patch -P0 -p1
+%patch -P1 -p1
+%patch -P2 -p1
 %{!?debug:%patch3 -p1}
 %{?with_ssp:%patch4 -p1}
-%patch5 -p1
-%patch6 -p0
-%patch7 -p1
-%patch8 -p0
-%patch9 -p0
+%patch -P5 -p1
+%patch -P6 -p0
+%patch -P7 -p1
+%patch -P8 -p0
+%patch -P9 -p0
 
 %ifarch alpha ia64
 # needed for bootstrap using gcc 3.3.x on alpha
 # and even using the same 3.4.x(!) (but not Debian's 3.3.x) on ia64
-%patch20 -p2
+%patch -P20 -p2
 %endif
 
 # because we distribute modified version of gcc...
